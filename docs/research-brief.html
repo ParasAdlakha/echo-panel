@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Echo Panel Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: single reading column, tables in scroll boxes. Light and dark tokens. */
+:root{--bg:#f7f6f3;--surface:#fff;--fg:#1c1b19;--muted:#55524b;--line:#e4e1da;--accent:#eb6834;--accent-soft:#fdf1ea;--link:#2a78d6;
+ --display:"Bricolage Grotesque",Inter,system-ui,sans-serif;--sans:Inter,system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1a19;--surface:#232321;--fg:#f0efec;--muted:#c3c2b7;--line:#3a3935;--accent:#f07a4c;--accent-soft:#3a271e;--link:#6da7ec}}
+:root[data-theme="dark"]{--bg:#1a1a19;--surface:#232321;--fg:#f0efec;--muted:#c3c2b7;--line:#3a3935;--accent:#f07a4c;--accent-soft:#3a271e;--link:#6da7ec}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--sans)}
+main{max-width:860px;margin:0 auto;padding:48px 16px 80px}
+.kicker{font:500 13px var(--mono);color:var(--accent);letter-spacing:.05em;text-transform:uppercase}
+h1{font:800 clamp(30px,5vw,46px)/1.08 var(--display);letter-spacing:-.02em;margin:10px 0 14px}
+h2{font:700 24px/1.25 var(--display);margin:42px 0 10px}
+p,li{color:var(--fg)}
+.lede{font-size:18px;color:var(--muted)}
+.box{background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:8px;padding:14px 18px;margin:18px 0}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);margin:12px 0 18px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{font-weight:600;background:color-mix(in srgb,var(--line) 45%,transparent)}
+tr:last-child td{border-bottom:0}
+a{color:var(--link)}
+code{font:500 13px var(--mono)}
+small{color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+ <div class="kicker">Research brief · AI x Epistemics Research Sprint · 13–15 November 2026</div>
+ <h1>The Echo Panel: why this question, what exists, what we add</h1>
+ <p class="lede">AI products increasingly answer with a panel of advisors. People read a panel's agreement as corroboration. We measured how much independent evidence that agreement actually carries, what over-counting it costs, and who over-counts.</p>
+
+ <div class="box"><b>One-line answer.</b> Five personas of one model carry about 1.1 independent opinions, five different models about 1.5, and one round of discussion takes it back to 1.1 while unanimity rises from 56% to 84% with no gain in accuracy. AI readers average; people are the ones at risk of counting.</div>
+
+ <h2>What the judges score, and how this project lines up</h2>
+ <div class="scroll"><table>
+  <tr><th>Criterion</th><th>What we offer</th></tr>
+  <tr><td>Impact and innovation</td><td>A neglected socio-technical question: the step between an AI panel's output and a person's belief. Measured on the panel designs products ship (personas, discussion, a shared brief), with the statistic the reader's inference relies on. A trust signal (the independence label) for Track 2 and a preregistered human study to test it.</td></tr>
+  <tr><td>Execution quality</td><td>190 questions resolved after every model's cutoff, a real human-crowd benchmark, 7 panel types, 5 OpenAI models plus 3 open-weight models from other developers, paired bootstrap CIs, a validated statistic (unit tests on synthetic panels), every model call cached and replayable. Honest negative result on the label.</td></tr>
+  <tr><td>Presentation and clarity</td><td>One number per panel ("worth about 1.1 opinions"), an interactive replay of every question, 8-page report on the official template, narrated slides and demo.</td></tr>
+ </table></div>
+
+ <h2>Prior work: what is measured, and what is missing</h2>
+ <div class="scroll"><table>
+  <tr><th>Work</th><th>What it shows</th><th>What it leaves open</th></tr>
+  <tr><td>Goldman 2001 (<i>Phil. &amp; Phenom. Research</i>)</td><td>Agreeing experts add evidence only if their opinions are not derived from each other</td><td>No measurement for AI advisors</td></tr>
+  <tr><td>Clemen &amp; Winkler 1985 (<i>Operations Research</i>)</td><td>Hard limits on the information from dependent sources</td><td>Classic forecasting setting</td></tr>
+  <tr><td>Lorenz et al. 2011; Becker et al. 2017 (<i>PNAS</i>)</td><td>Social influence narrows human crowds without improving them; network structure matters</td><td>Humans only</td></tr>
+  <tr><td>Kim et al. 2025 (ICML); Goel et al. 2025 (ICML)</td><td>LLMs from different developers share mistakes; similarity grows with capability</td><td>Benchmark accuracy, not product panels or forecasting under uncertainty</td></tr>
+  <tr><td>Schoenegger et al. 2024 (<i>Science Advances</i>)</td><td>A 12-model average matched a human crowd on 31 questions</td><td>Did not measure independence or the reader</td></tr>
+  <tr><td>Aitchison et al. 2026; Begin et al. 2026; Douven 2026</td><td>Frontier forecasters are highly correlated; ten tuned agents ≈ 1.4 forecasters; contamination inflates results</td><td>Accuracy-oriented ensembles, not personas, discussion or the human reader</td></tr>
+  <tr><td>Lee &amp; Lee 2026 (N = 127)</td><td>A unanimous set of agents inflates users' confidence</td><td>No measure of how much evidence the agreement carried</td></tr>
+  <tr><td>Hussain &amp; Nielbo 2026; Huang et al. 2026</td><td>LLM agents conform to majorities; post-communication agreement overstates reliability</td><td>Benchmarks with known answers; no human-crowd comparison</td></tr>
+ </table></div>
+
+ <h2>Datasets and tools</h2>
+ <div class="scroll"><table>
+  <tr><th>Resource</th><th>Use</th></tr>
+  <tr><td>ForecastBench question and resolution sets (Karger et al., ICLR 2025)</td><td>190 binary market questions frozen 19 July and 30 August 2026, resolved by October; market price at freeze as the human crowd</td></tr>
+  <tr><td>OpenAI API</td><td>gpt-4.1-mini, gpt-5.4-mini, gpt-4o-mini, gpt-5-mini, gpt-4.1 as advisors and decision-makers; TTS for the videos</td></tr>
+  <tr><td>Adaption (sprint sponsor credits) and NVIDIA API catalog</td><td>Gemma 4 31B, Qwen 3.8 27B, Nemotron 3.5 30B for the cross-developer panel</td></tr>
+  <tr><td>Considered, not used</td><td>SimpleQA (answers partly memorised; forecasting gives true uncertainty), Community Notes data (no ground truth for panel answers), live web search (would add a shared-retrieval confound we want to test separately)</td></tr>
+ </table></div>
+
+ <h2>Alternatives we considered</h2>
+ <ul>
+  <li><b>Multi-agent conformity (FlipRate in a group).</b> Six or more 2026 papers already measure it, including one with a million graded responses.</li>
+  <li><b>Planted false sources for research agents.</b> DRNOISE, MisKnow-Agent and the Synthetic Web benchmark cover it well.</li>
+  <li><b>Hedges lost across agent handoffs.</b> "Silence Is Endorsement" and "Manufactured Confidence" (2026) cover much of it.</li>
+  <li><b>Dispute-escalation benchmark.</b> Strongly human-centred and close to Stray's talk, but a listed example project, so likely crowded.</li>
+ </ul>
+ <p>We chose the Echo Panel because the human-facing link (how much a panel's agreement should move a reader) had no measurement, and because it builds on our previous sprint work on agent swarms.</p>
+
+ <h2>Risks and how we handled them</h2>
+ <div class="scroll"><table>
+  <tr><th>Risk</th><th>Handling</th></tr>
+  <tr><td>Contamination (models know the answers)</td><td>Only questions frozen and resolved after every model's training cutoff</td></tr>
+  <tr><td>The wrong statistic</td><td>Raw error correlation is near 1 for any panel with yes/no outcomes; we use correlation within outcome classes and show the difference with a synthetic test</td></tr>
+  <tr><td>Leakage into the label</td><td>Label values computed on the other four-fifths of questions</td></tr>
+  <tr><td>A strawman reader</td><td>The five-witness reading is stated as a stylised upper bound; the human claim rests on cited studies and a preregistered protocol</td></tr>
+  <tr><td>Unreliable open-weight endpoints</td><td>Main results on OpenAI models; cross-developer panel as a robustness check on the questions it completed</td></tr>
+  <tr><td>Dual use (false labels, gaming the statistic)</td><td>Shown directly with the inflated-label arm; label must come from a public track record and a party other than the vendor (report, Appendix A)</td></tr>
+ </table></div>
+ <p><small>Paras Adlakha and Harshita Adlakha · Apart Research AI x Epistemics Research Sprint, November 2026.</small></p>
+</main>
+</body>
+</html>

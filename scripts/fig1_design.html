@@ -1,0 +1,55 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  body{margin:0;background:#fff;font-family:"Inter","Segoe UI",Arial,sans-serif;color:#0b0b0b}
+  #fig{width:1300px;padding:24px 28px;box-sizing:border-box}
+  h1{font-size:22px;margin:0 0 4px;font-weight:650} .sub{color:#52514e;font-size:14px;margin-bottom:16px}
+  .row{display:flex;gap:16px;align-items:stretch}
+  .col{border:1.5px solid #dcdbd5;border-radius:12px;padding:14px 16px;background:#fcfcfb}
+  .col h2{font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;color:#52514e;margin:0 0 10px;font-weight:650}
+  .q{font-size:13.5px;line-height:1.45;background:#fff;border:1px solid #e6e5e0;border-radius:8px;padding:9px 11px}
+  .q small{display:block;color:#52514e;margin-top:6px;font-size:12px}
+  .panel{display:flex;align-items:center;gap:10px;margin:7px 0;padding:7px 9px;border-radius:8px;background:#fff;border:1px solid #e6e5e0}
+  .panel .name{width:150px;font-size:13px;font-weight:600}
+  .dots{display:flex;gap:5px}
+  .d{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:600 10px Consolas,monospace;color:#fff}
+  .blue{background:#2a78d6}.aqua{background:#1baf7a}.orange{background:#eb6834}.yellow{background:#c98500}.violet{background:#6250d6}
+  .panel .how{font-size:12px;color:#52514e;flex:1}
+  .arrow{font-size:26px;color:#8a8984;align-self:center}
+  .m li{font-size:13px;margin:6px 0;line-height:1.4}
+  .m b{font-weight:650}
+  .read{margin-top:10px;font-size:13px;line-height:1.45;padding:9px 11px;border-radius:8px;background:#fff;border:1px dashed #8a8984}
+  .note{margin-top:12px;font-size:12.5px;color:#52514e}
+</style></head><body>
+<div id="fig">
+<h1>The Echo Panel: five advisors, how many opinions?</h1>
+<div class="sub">190 ForecastBench questions frozen in July–August 2026 and resolved after every model's training cutoff. Five ways to build a five-advisor panel; the market price is the human benchmark and is never shown to the models.</div>
+<div class="row">
+  <div class="col" style="flex:0.85">
+    <h2>1 · The question</h2>
+    <div class="q">“Will Pete Fry win the 2026 Vancouver mayoral election?”<small>Today's date: 2026-08-20 · resolution criteria · background · closes 2026-10-17</small><small>Each advisor returns <code>{"p": 0.31, "why": "…"}</code></small></div>
+    <div class="read"><b>Human crowd:</b> market price on the freeze date (0.28)<br><b>Truth:</b> resolved YES</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="col" style="flex:1.5">
+    <h2>2 · Five panel designs</h2>
+    <div class="panel"><div class="name">Same model ×5</div><div class="dots"><div class="d blue">A</div><div class="d blue">A</div><div class="d blue">A</div><div class="d blue">A</div><div class="d blue">A</div></div><div class="how">one model, five samples</div></div>
+    <div class="panel"><div class="name">Five personas</div><div class="dots"><div class="d blue">Po</div><div class="d blue">Ec</div><div class="d blue">Sf</div><div class="d blue">Jo</div><div class="d blue">Ri</div></div><div class="how">one model as political scientist, economist, superforecaster, journalist, risk analyst</div></div>
+    <div class="panel"><div class="name">Five models</div><div class="dots"><div class="d blue">O</div><div class="d blue">O</div><div class="d aqua">G</div><div class="d orange">Q</div><div class="d violet">N</div></div><div class="how">OpenAI ×2, Google, Alibaba, NVIDIA</div></div>
+    <div class="panel"><div class="name">After discussion</div><div class="dots"><div class="d blue">O</div><div class="d blue">O</div><div class="d aqua">G</div><div class="d orange">Q</div><div class="d violet">N</div></div><div class="how">each sees the other four answers once, then revises</div></div>
+    <div class="panel"><div class="name">After a shared brief</div><div class="dots"><div class="d blue">O</div><div class="d blue">O</div><div class="d aqua">G</div><div class="d orange">Q</div><div class="d violet">N</div></div><div class="how">all read one 120-word research brief first</div></div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="col" style="flex:1.1">
+    <h2>3 · What we measure</h2>
+    <ul class="m" style="padding-left:18px;margin:0">
+      <li><b>ρ|y</b>: correlation between advisors once the outcome is known (what “they agree, so it's corroborated” assumes is zero)</li>
+      <li><b>n<sub>eff</sub> = 5 / (1 + 4ρ)</b>: effective number of independent advisors</li>
+      <li><b>Corroboration premium</b>: Brier of “five independent witnesses” minus Brier of the plain average</li>
+      <li><b>AI reader test</b>: a decision-maker model reads the panel with no note, a generic warning, the true independence label, or a false “5.0 independent” label</li>
+    </ul>
+  </div>
+</div>
+<div class="note">Temperature 1 for all advisors. Every call is cached and replayable. Bootstrap 95% CIs over questions; all panels compared on the same questions.</div>
+</div>
+</body></html>

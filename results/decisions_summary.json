@@ -1,0 +1,98 @@
+{
+ "discuss-oa [None] | gpt-4.1-mini": {
+  "k": 190,
+  "brier_none": 0.24244414736842107,
+  "brier_generic": 0.2423668315789474,
+  "brier_label": 0.24298592105263161,
+  "brier_inflated": 0.24113196315789476,
+  "brier_panel_mean": 0.24105073684210532,
+  "label_minus_none": 0.0005417736842105292,
+  "ci": [
+   -0.000996495526315784,
+   0.002137565657894739
+  ],
+  "extremity_shift_none": 0.002189473684210529,
+  "mean_abs_move_label_vs_none": 0.006594736842105263,
+  "mean_abs_move_inflated_vs_none": 0.0048578947368421044
+ },
+ "discuss-oa [None] | gpt-5.4-mini": {
+  "k": 190,
+  "brier_none": 0.23869592631578948,
+  "brier_generic": 0.24179684736842105,
+  "brier_label": 0.24439710526315786,
+  "brier_inflated": 0.2392098736842105,
+  "brier_panel_mean": 0.24105073684210532,
+  "label_minus_none": 0.005701178947368421,
+  "ci": [
+   -0.0013347172368421026,
+   0.014196754736842102
+  ],
+  "extremity_shift_none": 0.008452631578947373,
+  "mean_abs_move_label_vs_none": 0.020073684210526316,
+  "mean_abs_move_inflated_vs_none": 0.012421052631578947
+ },
+ "personas [gpt-4.1-mini] | gpt-5.4-mini": {
+  "k": 190,
+  "brier_none": 0.2576294736842105,
+  "brier_generic": 0.25928052631578946,
+  "brier_label": 0.2528847368421053,
+  "brier_inflated": 0.2694757894736842,
+  "brier_panel_mean": 0.25898446315789475,
+  "label_minus_none": -0.004744736842105268,
+  "ci": [
+   -0.016135736842105272,
+   0.007093473684210486
+  ],
+  "extremity_shift_none": 0.0046736842105263125,
+  "mean_abs_move_label_vs_none": 0.04121052631578947,
+  "mean_abs_move_inflated_vs_none": 0.04052631578947368
+ },
+ "personas [gpt-5.4-mini] | gpt-4.1-mini": {
+  "k": 190,
+  "brier_none": 0.22362805789473683,
+  "brier_generic": 0.22197328947368422,
+  "brier_label": 0.2255444736842105,
+  "brier_inflated": 0.2232858894736842,
+  "brier_panel_mean": 0.22261896973894738,
+  "label_minus_none": 0.001916415789473688,
+  "ci": [
+   -5.0715789473684334e-05,
+   0.003973660526315792
+  ],
+  "extremity_shift_none": 0.0018174736842105268,
+  "mean_abs_move_label_vs_none": 0.008215789473684211,
+  "mean_abs_move_inflated_vs_none": 0.005515789473684208
+ },
+ "samples [gpt-4.1-mini] | gpt-5.4-mini": {
+  "k": 190,
+  "brier_none": 0.2597215789473684,
+  "brier_generic": 0.26069002105263156,
+  "brier_label": 0.26327368421052627,
+  "brier_inflated": 0.25802157894736844,
+  "brier_panel_mean": 0.26960669473684207,
+  "label_minus_none": 0.0035521052631578964,
+  "ci": [
+   -0.009557381578947373,
+   0.01853139473684208
+  ],
+  "extremity_shift_none": -0.0031894736842105246,
+  "mean_abs_move_label_vs_none": 0.04342105263157895,
+  "mean_abs_move_inflated_vs_none": 0.0431578947368421
+ },
+ "samples [gpt-5.4-mini] | gpt-4.1-mini": {
+  "k": 190,
+  "brier_none": 0.23305056315789477,
+  "brier_generic": 0.23183649473684212,
+  "brier_label": 0.23141736842105265,
+  "brier_inflated": 0.2309966,
+  "brier_panel_mean": 0.23081650884421054,
+  "label_minus_none": -0.001633194736842108,
+  "ci": [
+   -0.0045613313157894745,
+   0.0009254052631578921
+  ],
+  "extremity_shift_none": 0.004791684210526317,
+  "mean_abs_move_label_vs_none": 0.009036842105263156,
+  "mean_abs_move_inflated_vs_none": 0.005542105263157894
+ }
+}

@@ -1,0 +1,8 @@
+Five OpenAI models: after vs before discussion       k=190 Δn_eff -0.370 [-0.471,-0.284]  Δbrier +0.009 [+0.001,+0.018]  Δunan +0.279 [+0.216,+0.347]  Δspread -0.086 [-0.094,-0.079]
+Five OpenAI models: shared brief vs none             k=190 Δn_eff -0.177 [-0.279,-0.098]  Δbrier -0.015 [-0.027,-0.003]  Δunan +0.089 [+0.016,+0.163]  Δspread -0.034 [-0.043,-0.026]
+Five OpenAI models vs five personas (gpt-5.4-mini)   k=190 Δn_eff +0.361 [+0.269,+0.483]  Δbrier +0.009 [-0.010,+0.028]  Δunan -0.216 [-0.300,-0.137]  Δspread +0.073 [+0.063,+0.084]
+Five OpenAI models vs one model ×5 (gpt-5.4-mini)    k=190 Δn_eff +0.363 [+0.276,+0.484]  Δbrier +0.001 [-0.018,+0.019]  Δunan -0.200 [-0.284,-0.121]  Δspread +0.073 [+0.063,+0.083]
+Personas vs samples (gpt-4.1-mini)                   k=190 Δn_eff +0.065 [+0.021,+0.120]  Δbrier -0.011 [-0.021,-0.001]  Δunan -0.032 [-0.079,+0.021]  Δspread +0.011 [+0.004,+0.018]
+Personas vs samples (gpt-5.4-mini)                   k=190 Δn_eff +0.003 [-0.025,+0.030]  Δbrier -0.008 [-0.018,+0.001]  Δunan +0.016 [-0.042,+0.068]  Δspread -0.000 [-0.008,+0.006]
+Four developers: after vs before discussion          k=139 Δn_eff -0.321 [-0.447,-0.223]  Δbrier +0.003 [-0.006,+0.013]  Δunan +0.252 [+0.180,+0.324]  Δspread -0.080 [-0.090,-0.070]
+Four developers: shared brief vs none                k=165 Δn_eff -0.129 [-0.236,-0.030]  Δbrier -0.007 [-0.019,+0.005]  Δunan +0.121 [+0.048,+0.194]  Δspread -0.026 [-0.036,-0.016]

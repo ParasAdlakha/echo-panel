@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Echo Panel · How many opinions does an AI panel give you?</title>
+<meta name="description" content="When AI advisors agree, how many independent opinions do you get? Five product-style AI panels on 190 resolved forecasting questions. Apart Research AI x Epistemics Research Sprint, November 2026.">
+<meta property="og:image" content="img/social-cover.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#f7f6f3;--surface:#fff;--line:#e4e1da;--ink:#1c1b19;--ink-2:#55524b;--ink-3:#8a867c;--accent:#eb6834;--blue:#2a78d6;
+ --display:"Bricolage Grotesque",Inter,system-ui,sans-serif;--sans:Inter,system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+.col{max-width:760px;margin:0 auto;padding:0 16px}
+.wide{max-width:1100px;margin:0 auto;padding:0 16px}
+header{padding:56px 0 22px}
+.kicker{font:500 13px var(--mono);color:var(--accent);letter-spacing:.04em;text-transform:uppercase}
+h1{font:800 clamp(34px,6vw,58px)/1.04 var(--display);letter-spacing:-.02em;margin:10px 0 14px}
+.lede{font-size:19px;color:var(--ink-2);margin:0}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+.links a{font:600 14px var(--sans);text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px}
+.links a.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+video{width:100%;border-radius:14px;border:1px solid var(--line);background:#000;display:block}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.stat b{display:block;font:700 30px/1.1 var(--display);letter-spacing:-.01em}
+.stat span{font-size:13.5px;color:var(--ink-2)}
+h2{font:700 28px/1.2 var(--display);letter-spacing:-.01em;margin:48px 0 10px}
+h3{font:600 18px var(--sans);margin:26px 0 6px}
+p{margin:0 0 14px}
+figure{margin:20px 0 26px}
+figure img{width:100%;border-radius:12px;border:1px solid var(--line);background:#fff;display:block}
+figcaption{font-size:14px;color:var(--ink-2);margin-top:8px}
+.quote{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin:18px 0;color:var(--ink);font-size:17px}
+.quote small{display:block;color:var(--ink-3);font-size:13px;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:12px 0 20px;background:var(--surface);border-radius:12px;overflow:hidden}
+.tw{overflow-x:auto}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;background:#f1efea}
+code{font:500 13.5px var(--mono);background:#efede7;padding:1px 5px;border-radius:5px}
+footer{color:var(--ink-3);font-size:14px;padding:40px 0 60px}
+a{color:var(--blue)}
+</style>
+</head>
+<body>
+<div class="col">
+ <header>
+  <div class="kicker">Apart Research · AI x Epistemics Research Sprint · November 2026</div>
+  <h1>The Echo Panel</h1>
+  <p class="lede">When AI advisors agree, how many independent opinions do you actually get? We asked five-advisor AI panels, built the way products build them, 190 forecasting questions that had already resolved, and measured how much of their agreement was echo.</p>
+  <div class="links">
+   <a class="primary" href="report/EchoPanel-report.pdf">Read the report (PDF)</a>
+   <a href="viewer.html">Replay the panels</a>
+   <a href="slides/EchoPanel-slides.pdf">Slides</a>
+   <a href="https://github.com/ParasAdlakha/echo-panel">Code and data</a>
+  </div>
+ </header>
+</div>
+
+<div class="wide">
+ <video controls preload="metadata" poster="img/social-cover.png" src="video/EchoPanel-pitch.mp4"></video>
+</div>
+
+<div class="col">
+ <div class="stats">
+  <div class="stat"><b>1.1</b><span>independent opinions in five personas of one model</span></div>
+  <div class="stat"><b>1.47 → 1.10</b><span>five different models, before and after one round of discussion</span></div>
+  <div class="stat"><b>56% → 84%</b><span>panels where all five agree, before and after discussion; right 70% vs 68%</span></div>
+  <div class="stat"><b>+0.07 to +0.13</b><span>Brier penalty for counting the panel as five independent witnesses</span></div>
+ </div>
+
+ <h2>The question</h2>
+ <p>Ask an AI product a hard question and you may get a panel back: several models side by side, one model playing a set of named experts, or a group of agents that confer before answering. When they agree, it feels like corroboration. It is corroboration only if the advisors are independent once you know the truth. Two experts reading the same source, or one echoing the other, add nothing to each other (Goldman 2001; Clemen & Winkler 1985). No interface shows you which case you are in.</p>
+
+ <h2>The study</h2>
+ <p>We took 190 questions from ForecastBench (Polymarket, Metaculus, Manifold, INFER) that were frozen in July–August 2026 and resolved by October, after every model's training cutoff. Each comes with the prediction market's price on the freeze date, a real human-crowd forecast that the models never saw. Every panel has five advisors who each give a probability and a one-sentence reason. Only the way the five are produced changes.</p>
+</div>
+<div class="wide"><figure><img src="img/fig1_design.png" alt="Design: one question, five panel designs, and what we measure"><figcaption>Figure 1. Five ways to build a five-advisor panel, scored against the outcome and the market.</figcaption></figure></div>
+
+<div class="col">
+ <p>We measure independence with the statistic a reader's inference actually depends on: how correlated the advisors are once the outcome is known. From it comes the <b>effective number of independent advisors</b>, n<sub>eff</sub> = 5 / (1 + 4ρ). Five independent advisors give 5; five copies of one opinion give 1.</p>
+
+ <h2>What we found</h2>
+ <h3>1. Five voices carry little more than one opinion</h3>
+ <p>One model asked five times is worth 1.10 to 1.13 opinions. Dressing the five calls as a political scientist, an economist, a superforecaster, a journalist and a risk analyst adds almost nothing (1.11 to 1.20). Five different models do better, 1.47, and a panel spanning four developers (OpenAI, Google, Alibaba, NVIDIA) does no better than five OpenAI models (1.41 against 1.42 on the same questions).</p>
+</div>
+<div class="wide"><figure><img src="img/fig2_neff.png" alt="Effective number of independent advisors per panel type"><figcaption>Figure 2. Effective independent advisors per panel, with 95% bootstrap intervals.</figcaption></figure></div>
+
+<div class="col">
+ <h3>2. Talking makes them agree, not get it right</h3>
+ <p>After one round in which each model saw the other four answers, independence fell from 1.47 to 1.10, the level of a single model. The share of questions where all five agreed rose from 56% to 84%. Unanimous panels were right 70% of the time before and 68% after. This is the effect Lorenz et al. (2011) found in human groups, now in a panel of models. A shared research brief did something milder: a little less independence, a little more accuracy.</p>
+</div>
+<div class="wide"><figure><img src="img/fig4_discussion.png" alt="Independence, unanimity and accuracy before and after discussion"><figcaption>Figure 3. Five OpenAI models with no exchange, after a shared brief, and after one round of discussion.</figcaption></figure></div>
+
+<div class="col">
+ <h3>3. Counting agreement as corroboration is expensive</h3>
+ <p>Read as five independent witnesses, the panels looked 92% to 95% sure on average and were right on 56% to 68% of questions. That reading worsened their Brier scores by 0.065 to 0.127. The prediction market (Brier 0.140) beat every AI panel; without web access the panels were close to the 0.25 of always answering 50%.</p>
+</div>
+<div class="wide"><figure><img src="img/fig3_premium.png" alt="Brier score of the average versus the five-witness reading"><figcaption>Figure 4. The plain average (dot) and the same five advisors counted as independent witnesses (arrow tip). Lower is better.</figcaption></figure></div>
+
+<div class="col">
+ <h3>4. Machines average, people count</h3>
+ <p>We gave the same panels to two AI decision-makers and asked for a final forecast, with no note, a generic warning, a true independence label ("these five carry the information of about 1.5 independent advisors"), or a false one ("5.0"). They simply averaged the panel, even when it was unanimous, and no note changed that. The over-counting risk sits with people, who are known to read AI consensus as social proof (Lee & Lee 2026).</p>
+</div>
+<div class="wide"><figure><img src="img/fig5_decisions.png" alt="AI decision-makers stay at the panel average"><figcaption>Figure 5. AI readers' Brier score relative to the panel average. The shaded band is the cost of the five-witness reading.</figcaption></figure></div>
+
+<div class="col">
+ <h2>What it means</h2>
+ <p>The number of advisors on screen overstates the evidence by a factor of three to five. Interfaces should show something closer to n<sub>eff</sub> than to n, should not present personas as independent experts, and should collect forecasts before letting agents talk. An independence label is cheap to compute from a panel's track record and easy to audit, but a false one is just as easy to print, so who issues it matters. The report gives a preregistered protocol for testing the label with people.</p>
+
+ <h2>Limitations</h2>
+ <p>No web access, so the panels were weak forecasters. Questions come from prediction markets and skew towards politics, crypto and sport. The five-witness reading is a stylised reader, so its cost is an upper bound. Mostly small and mid-sized OpenAI models, because the open-weight endpoints rate-limited heavily during the sprint. No human participants yet. Details and the dual-use discussion are in the report.</p>
+
+ <h2>Reproduce it</h2>
+ <p>Python 3.11+, <code>pip install -r requirements.txt</code>, an <code>OPENAI_API_KEY</code>. Then <code>python -m echo.data</code>, <code>python -m echo.panels</code>, <code>python -m echo.analyze</code>. Every model call is cached in the repository, so the analysis reruns without new calls.</p>
+
+ <footer>
+  Paras Adlakha and Harshita Adlakha · Built during the <a href="https://apartresearch.com/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15">Apart Research AI x Epistemics Research Sprint</a>, 13–15 November 2026. Thanks to Apart Research, Adaption, the sprint speakers and the ForecastBench team.
+ </footer>
+</div>
+</body>
+</html>

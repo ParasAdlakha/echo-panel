@@ -1,0 +1,15 @@
+.env
+__pycache__/
+scratch/
+docs/video/_build/
+report/~$*
+*.pyc
+docs/SUBMISSION TEXTS*
+docs/FUNDING FORM*
+report/template.docx
+.[c]laude/
+results/cache/
+results/*.log
+results/full_dec.err
+.pytest_cache/
+data/raw/simple_qa_test_set.csv

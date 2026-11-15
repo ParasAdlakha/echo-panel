@@ -1,0 +1,11 @@
+openai>=1.50
+adaption>=0.19    # only for the Adaption-hosted models (cross-developer panel)
+numpy
+matplotlib
+# only for rebuilding the report, slides, figures and videos
+python-docx
+python-pptx
+pillow
+pymupdf
+playwright
+pytest
